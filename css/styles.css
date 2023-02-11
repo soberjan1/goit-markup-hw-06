@@ -47,6 +47,17 @@ img {
   padding-bottom: 120px;
 }
 
+.visually-hiden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   color: var(--primary-color);
@@ -166,7 +177,7 @@ body {
   opacity: 1;
 }
 
-.current { 
+.current {
   color: var(--accent-color);
 }
 
@@ -411,7 +422,7 @@ body {
 
 .footer-description {
   margin-top: 16px;
-  max-width: 264px;
+  width: 264px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #e7e9fc;
@@ -470,6 +481,69 @@ body {
 
 /* ============= /ФУТУЕР =============*/
 
+/* ============= ФУТУЕР-ФОРМА =============*/
+
+.footer-modal {
+  margin-left: 80px;
+}
+
+.footer-modal-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-modal-p {
+  margin-bottom: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.footer-modal-form-input {
+  outline: none;
+  min-width: 264px;
+  height: 40px;
+  padding-left: 16px;
+  color: white;
+  background-color: var(--secondary-color);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.footer-modal-form-input::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-modal-form-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 165px;
+  height: 40px;
+  margin-left: 24px;
+  background: #4d5ae5;
+  border-radius: 4px;
+  border: none;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 2;
+  color: white;
+}
+
+.footer-form-icon { 
+  display: flex;
+  margin-left: 16px;
+}
+/* ============= /ФУТУЕР-ФОРМА =============*/
+
 /* ============= МОДАЛЬНОЕ ОКНО =============*/
 .backdrop {
   position: fixed;
@@ -494,11 +568,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 408px;
-  height: 576px;
+  min-height: 584px;
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  padding-top: 72px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 24px;
 }
 
 .modal-close-btn {
@@ -527,7 +606,174 @@ body {
   background: var(--accent-color);
   fill: #ffffff;
 }
+
 /* ============= /МОДАЛЬНОЕ ОКНО =============*/
+
+/* ============= МОДАЛЬНАЯ ФОРМА  =============*/
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form-field {
+  margin-bottom: 8px;
+}
+.modal-form-field-comment {
+  margin-bottom: 16px;
+}
+
+.modal-p {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: var(--secondary-color);
+}
+
+.modal-form-input-desc {
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  padding-bottom: 4px;
+  color: #8e8f99;
+}
+
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  padding-left: 38px;
+  color: #434455;
+
+  transition: border-color var(--250ms-animation);
+}
+
+.modal-form-input:focus {
+  border-color: #4d5ae5;
+  outline: none;
+}
+
+.modal-form-input-wrapper {
+  display: block;
+  position: relative;
+}
+
+.modal-form-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%);
+  display: block;
+  width: 18px;
+  height: 18px;
+
+  transition: fill var(--250ms-animation);
+}
+
+.modal-form-input:focus + .modal-form-input-icon {
+  fill: #4d5ae5;
+}
+
+.modal-form-comment {
+  resize: none;
+  width: 100%;
+  height: 120px;
+  padding: 8px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  transition: border-color var(--250ms-animation);
+}
+
+.modal-form-comment::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form-comment:focus {
+  border-color: #4d5ae5;
+  outline: none;
+}
+
+.modal-form-chek-desc {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+
+  color: #757575;
+}
+
+.modal-form-chek-desc::before {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid var(--secondary-color);
+  border-radius: 2px;
+  content: '';
+  cursor: pointer;
+  margin-right: 8px;
+
+  transition: background-color var(--250ms-animation),
+    background-image var(--250ms-animation);
+}
+
+.modal-form-chek:checked + .modal-form-chek-desc::before {
+  background-color: var(--accent-color);
+  background-image: url('../images/galka-form.svg');
+  background-repeat: no-repeat;
+  background-position: 50%, 50%;
+}
+
+.modal-form-chek:focus + .modal-form-chek-desc::before {
+  outline: 1px solid #4d5ae5;
+}
+
+.modal-form-submit {
+  display: flex;
+  justify-content: center;
+  width: 169px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+  border-radius: 4px;
+  border: none;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+
+  color: #ffffff;
+  background-color: #4d5ae5;
+
+  transition: background-color var(--250ms-animation);
+}
+
+.modal-form-submit:hover,
+.modal-form-submit:focus {
+  background-color: var(--accent-color);
+}
+/* ============= /МОДАЛЬНОЕ ФОРМА =============*/
 
 /* ========== СТИЛИ ДЛЯ ПОРТФОЛИО ========== */
 
@@ -570,7 +816,7 @@ body {
   color: #4d5ae5;
 
   transition: color var(--250ms-animation),
-  background-color var(--250ms-animation), box-shadow var(--250ms-animation);
+    background-color var(--250ms-animation), box-shadow var(--250ms-animation);
 }
 
 .menu-btn:hover,
