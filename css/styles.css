@@ -35,19 +35,6 @@ img {
   text-decoration: none;
 }
 
-.container {
-  width: 1158px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-.section {
-  padding-top: 120px;
-  padding-bottom: 120px;
-}
-
 .visually-hiden {
   position: absolute;
   width: 1px;
@@ -59,11 +46,17 @@ img {
   clip: rect(0 0 0 0);
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  color: var(--primary-color);
-  background-color: var(--basic-white-color);
-  font-size: 16px;
+.container {
+  width: 1158px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 /* ============= КОМПОНЕНТЫ ============*/
@@ -288,7 +281,7 @@ body {
 }
 
 .menu-item-benefits {
-  flex-basis: calc((100% - 72px) / 4);
+  flex-basis: calc( ( 100% - 72px ) / 4 );
 }
 
 .benefits-div-list {
@@ -313,7 +306,7 @@ body {
 }
 
 .menu-item-img {
-  flex-basis: calc((100%-48) / 3);
+  flex-basis: calc((100% - 48px) / 3);
 }
 /* ============= /ПРИМЕРЫ РАБОТ =============*/
 
